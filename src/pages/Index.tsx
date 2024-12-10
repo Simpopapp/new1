@@ -1,6 +1,9 @@
 import { ProductCard } from "@/components/ProductCard";
 import { PremiumSection } from "@/components/PremiumSection";
 import { Wifi, Coffee, CreditCard } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const products = [
   {
@@ -8,42 +11,77 @@ const products = [
     description: "Pack com 10 unidades do dispositivo V60, perfeito para revendedores",
     price: 599.90,
     image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0221.jpg?v=1691183189",
-    time: "600 puffs"
+    time: "600 puffs",
+    category: "v60"
   },
   {
     name: "Ignite V80 Vape Device",
     description: "Dispositivo V80 individual com maior capacidade e duração",
     price: 79.90,
     image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/V80_Couch.jpg?v=1713918859",
-    time: "800 puffs"
+    time: "800 puffs",
+    category: "v80"
   },
   {
     name: "Ignite V80 Vape Device - Tobacco",
     description: "V80 com sabor autêntico de tabaco para uma experiência tradicional",
     price: 79.90,
     image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/Tobacco_2.webp?v=1718828976",
-    time: "800 puffs"
+    time: "800 puffs",
+    category: "v80"
   },
 ];
 
-const combos = [
+const v80Products = [
   {
     name: "Ignite V80 Vape Device [10 Pack]",
     description: "Pack econômico com 10 unidades do V80, ideal para revendedores",
     price: 699.90,
     image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/V80_Grass.jpg?v=1713918893",
-    time: "8000 puffs total"
+    time: "8000 puffs total",
+    category: "v80"
   },
+  {
+    name: "Ignite V80 Vape Device - Tobacco [10 Pack]",
+    description: "Pack com 10 unidades do V80 sabor tabaco",
+    price: 699.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/TOBACCO.webp?v=1720032194",
+    time: "8000 puffs total",
+    category: "v80"
+  }
+];
+
+const v150Products = [
   {
     name: "Ignite V150 Device [5 Pack]",
     description: "Kit com 5 unidades do poderoso V150 com maior duração",
     price: 499.90,
     image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/BERRY_BLAST.webp?v=1720555805",
-    time: "4500 puffs total"
+    time: "4500 puffs total",
+    category: "v150"
   },
+  {
+    name: "Ignite V150 Device - Tobacco [5 Pack]",
+    description: "Kit com 5 unidades do V150 sabor tabaco",
+    price: 499.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/TOBACCO_a593b9b2-8ad7-4df8-968a-0dd318f9a504.webp?v=1720555752",
+    time: "4500 puffs total",
+    category: "v150"
+  },
+  {
+    name: "Ignite V150 Vape Device - Tobacco",
+    description: "V150 individual sabor tabaco com maior duração",
+    price: 119.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/V150_TOBACCO.webp?v=1718895995",
+    time: "1500 puffs",
+    category: "v150"
+  }
 ];
 
 const Index = () => {
+  const [isV80Open, setIsV80Open] = useState(false);
+  const [isV150Open, setIsV150Open] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -67,14 +105,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Combos Section */}
+      {/* V80 Expanded Section */}
       <section className="container mx-auto mb-20">
-        <h2 className="text-3xl font-bold mb-8">Combos Especiais</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {combos.map((combo) => (
-            <ProductCard key={combo.name} {...combo} />
-          ))}
-        </div>
+        <Collapsible open={isV80Open} onOpenChange={setIsV80Open}>
+          <CollapsibleTrigger asChild>
+            <Button variant="outline" className="w-full mb-4 bg-secondary hover:bg-gold hover:text-black transition-all">
+              {isV80Open ? "Fechar Linha V80" : "Ver Mais Produtos V80"}
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+              {v80Products.map((product) => (
+                <ProductCard key={product.name} {...product} />
+              ))}
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+      </section>
+
+      {/* V150 Expanded Section */}
+      <section className="container mx-auto mb-20">
+        <Collapsible open={isV150Open} onOpenChange={setIsV150Open}>
+          <CollapsibleTrigger asChild>
+            <Button variant="outline" className="w-full mb-4 bg-secondary hover:bg-gold hover:text-black transition-all">
+              {isV150Open ? "Fechar Linha V150" : "Ver Mais Produtos V150"}
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+              {v150Products.map((product) => (
+                <ProductCard key={product.name} {...product} />
+              ))}
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
       </section>
 
       {/* Amenities */}
