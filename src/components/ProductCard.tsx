@@ -14,6 +14,54 @@ interface ProductCardProps {
 }
 
 const similarProducts = {
+  v15: [
+    {
+      name: "Ignite V15 Vape Device",
+      description: "Dispositivo V15 individual compacto e prático",
+      price: 49.90,
+      image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/products/ign_prodcreative0203.jpg?v=1680537677",
+      time: "150 puffs"
+    },
+    {
+      name: "Ignite V15 Vape Device [10 Pack]",
+      description: "Pack com 10 unidades do V15, ideal para revendedores",
+      price: 449.90,
+      image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/ign_prodcreative-v15-retouch.jpg?v=1682638135",
+      time: "1500 puffs total"
+    }
+  ],
+  v35: [
+    {
+      name: "Ignite V35 Vape Device",
+      description: "Dispositivo V35 com maior capacidade",
+      price: 59.90,
+      image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0201.jpg?v=1691183623",
+      time: "350 puffs"
+    },
+    {
+      name: "Ignite V35 Vape Device [10 Pack]",
+      description: "Pack com 10 unidades do V35",
+      price: 549.90,
+      image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0195_1.jpg?v=1691183683",
+      time: "3500 puffs total"
+    }
+  ],
+  v50: [
+    {
+      name: "Ignite V50 Vape Device",
+      description: "Dispositivo V50 com excelente duração",
+      price: 69.90,
+      image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0179_1.jpg?v=1691183359",
+      time: "500 puffs"
+    },
+    {
+      name: "Ignite V50 Vape Device [10 Pack]",
+      description: "Pack com 10 unidades do V50",
+      price: 599.90,
+      image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/v50_SinglePack_LineupShot.jpg?v=1691693458",
+      time: "5000 puffs total"
+    }
+  ],
   v60: [
     {
       name: "Ignite V60 - Mint",
