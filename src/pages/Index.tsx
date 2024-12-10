@@ -4,42 +4,42 @@ import { Wifi, Coffee, CreditCard } from "lucide-react";
 
 const products = [
   {
-    name: "Ice Mint Pod",
-    description: "Pod descartável com sabor refrescante de menta",
-    price: 60.00,
-    image: "https://images.unsplash.com/photo-1563070784-bf59c2d38097?w=500&auto=format",
+    name: "Ignite V60 Vape Device [10 Pack]",
+    description: "Pack com 10 unidades do dispositivo V60, perfeito para revendedores",
+    price: 599.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0221.jpg?v=1691183189",
+    time: "600 puffs"
+  },
+  {
+    name: "Ignite V80 Vape Device",
+    description: "Dispositivo V80 individual com maior capacidade e duração",
+    price: 79.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/V80_Couch.jpg?v=1713918859",
     time: "800 puffs"
   },
   {
-    name: "Strawberry Dream",
-    description: "Sabor intenso de morango com toque de creme",
-    price: 65.00,
-    image: "https://images.unsplash.com/photo-1601415783626-db759b8e8a3b?w=500&auto=format",
-    time: "1000 puffs"
-  },
-  {
-    name: "Tropical Mix",
-    description: "Blend tropical com manga e maracujá",
-    price: 70.00,
-    image: "https://images.unsplash.com/photo-1595980542930-a6bb27964e69?w=500&auto=format",
-    time: "1200 puffs"
+    name: "Ignite V80 Vape Device - Tobacco",
+    description: "V80 com sabor autêntico de tabaco para uma experiência tradicional",
+    price: 79.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/Tobacco_2.webp?v=1718828976",
+    time: "800 puffs"
   },
 ];
 
 const combos = [
   {
-    name: "Duo Frutas",
-    description: "2 pods com sabores frutados à sua escolha",
-    price: 110.00,
-    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format",
-    time: "2000 puffs total"
+    name: "Ignite V80 Vape Device [10 Pack]",
+    description: "Pack econômico com 10 unidades do V80, ideal para revendedores",
+    price: 699.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/V80_Grass.jpg?v=1713918893",
+    time: "8000 puffs total"
   },
   {
-    name: "Trio Premium",
-    description: "3 pods da linha premium com case exclusivo",
-    price: 180.00,
-    image: "https://images.unsplash.com/photo-1600423115367-87ea7661688f?w=500&auto=format",
-    time: "3000 puffs total"
+    name: "Ignite V150 Device [5 Pack]",
+    description: "Kit com 5 unidades do poderoso V150 com maior duração",
+    price: 499.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/BERRY_BLAST.webp?v=1720555805",
+    time: "4500 puffs total"
   },
 ];
 
@@ -48,8 +48,8 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <header className="container mx-auto py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4">Vape Store Premium</h1>
-        <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis</p>
+        <h1 className="text-5xl font-bold mb-4">Ignite Vape Store</h1>
+        <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis Ignite</p>
       </header>
 
       {/* Premium Section */}
@@ -93,7 +93,7 @@ const Index = () => {
               <Coffee className="w-8 h-8 text-black" />
             </div>
             <h3 className="text-xl font-bold mb-2">Qualidade Premium</h3>
-            <p className="text-gray-400">Produtos selecionados e testados</p>
+            <p className="text-gray-400">Produtos originais Ignite</p>
           </div>
           <div className="flex flex-col items-center text-center">
             <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-4">
@@ -114,11 +114,11 @@ const Index = () => {
               (11) 456-7890
             </a>
             <a href="https://instagram.com" className="text-gold hover:text-gold-light transition-colors">
-              @vapestore
+              @ignitestore
             </a>
           </div>
           <p className="text-gray-400 text-sm">
-            © 2024 Vape Store Premium. Todos os direitos reservados.
+            © 2024 Ignite Store. Todos os direitos reservados.
           </p>
         </div>
       </footer>

@@ -7,10 +7,10 @@ export function PremiumSection() {
       <div className="flex flex-col md:flex-row items-center gap-8">
         <div className="flex-1">
           <h2 className="text-3xl font-bold mb-4 text-gold flex items-center gap-2">
-            <Crown className="h-8 w-8" /> Premium Collection
+            <Crown className="h-8 w-8" /> Ignite V150
           </h2>
           <p className="text-gray-400 mb-6">
-            Experimente nossa linha exclusiva de pods premium, com sabores únicos e duração prolongada.
+            Experimente nossa linha premium V150, com maior capacidade e duração prolongada de até 1500 puffs.
           </p>
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -29,7 +29,7 @@ export function PremiumSection() {
                 <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
-              <span>Maior durabilidade</span>
+              <span>1500 puffs de duração</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -65,17 +65,17 @@ export function PremiumSection() {
                 <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
-              <span>Qualidade superior</span>
+              <span>Design premium</span>
             </div>
           </div>
           <Button className="mt-8 bg-gradient-gold text-black hover:bg-gold hover:scale-105 transition-all duration-300">
-            Ver Coleção Premium
+            Comprar V150
           </Button>
         </div>
         <div className="flex-1">
           <img
-            src="/public/lovable-uploads/18ed7b05-cb14-4b1f-a3d4-5625f71fea74.png"
-            alt="Premium Collection"
+            src="https://cdn.shopify.com/s/files/1/0072/5119/8050/files/V150_BERRY-BLAST.png?v=1722018032"
+            alt="Ignite V150"
             className="rounded-lg w-full h-[300px] object-cover"
           />
         </div>
