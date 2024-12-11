@@ -8,11 +8,15 @@ interface ProductCardProps {
   price: number;
   image: string;
   time?: string;
+  onClick?: () => void;
 }
 
-export function ProductCard({ name, description, price, image, time }: ProductCardProps) {
+export function ProductCard({ name, description, price, image, time, onClick }: ProductCardProps) {
   const handleBuy = () => {
     toast.success("Produto adicionado ao carrinho!");
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (

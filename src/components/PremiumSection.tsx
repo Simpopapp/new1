@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Crown } from "lucide-react";
 
-export function PremiumSection() {
+interface PremiumSectionProps {
+  onButtonClick?: () => void;
+}
+
+export function PremiumSection({ onButtonClick }: PremiumSectionProps) {
   return (
     <div className="relative overflow-hidden bg-secondary rounded-lg p-8 mb-16">
       <div className="flex flex-col md:flex-row items-center gap-8">
@@ -68,7 +72,10 @@ export function PremiumSection() {
               <span>Design premium</span>
             </div>
           </div>
-          <Button className="mt-8 bg-gradient-gold text-black hover:bg-gold hover:scale-105 transition-all duration-300">
+          <Button 
+            className="mt-8 bg-gradient-gold text-black hover:bg-gold hover:scale-105 transition-all duration-300"
+            onClick={onButtonClick}
+          >
             Comprar V150
           </Button>
         </div>
