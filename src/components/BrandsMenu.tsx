@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ScrollArea } from "./ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface BrandMenuItem {
   id: string;
@@ -34,28 +35,44 @@ export function BrandsMenu() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full bg-secondary/50 backdrop-blur-sm sticky top-0 z-50 py-12">
+    <div className="relative w-full bg-gradient-to-b from-secondary/80 to-secondary/40 backdrop-blur-md sticky top-0 z-50 py-16 shadow-lg">
+      <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5 opacity-50" />
+      
       <ScrollArea className="w-full">
-        <div className="flex items-center gap-12 px-12 min-w-max mx-auto max-w-screen-xl">
-          {brandMenuItems.map((brand) => (
-            <button
+        <div className="flex items-center gap-16 px-16 min-w-max mx-auto max-w-screen-xl relative">
+          {brandMenuItems.map((brand, index) => (
+            <motion.button
               key={brand.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => navigate(brand.route)}
               className={cn(
-                "flex flex-col items-center gap-6 p-6 rounded-lg",
-                "hover:bg-secondary/80 transition-colors duration-200",
-                "focus:outline-none focus:ring-2 focus:ring-primary/50"
+                "group flex flex-col items-center gap-8 p-8 rounded-2xl",
+                "hover:bg-secondary/60 transition-all duration-300 ease-out",
+                "focus:outline-none focus:ring-2 focus:ring-primary/50",
+                "relative overflow-hidden"
               )}
             >
-              <div className="w-64 h-64 rounded-full overflow-hidden bg-background/10 p-6">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <motion.div 
+                className="w-72 h-72 rounded-full overflow-hidden bg-gradient-to-br from-background/20 to-background/5 p-6 relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
                   src={brand.image}
                   alt={brand.name}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
                 />
-              </div>
-              <span className="text-2xl font-medium text-foreground/80">{brand.name}</span>
-            </button>
+              </motion.div>
+              
+              <span className="text-3xl font-medium bg-gradient-gold bg-clip-text text-transparent group-hover:text-foreground transition-colors duration-300">
+                {brand.name}
+              </span>
+            </motion.button>
           ))}
         </div>
       </ScrollArea>
