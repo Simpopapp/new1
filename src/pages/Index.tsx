@@ -57,9 +57,9 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       {isMobile ? (
-        <header className="w-full bg-black py-8 px-4">
+        <header className="w-full py-8 px-4">
           <div className="container mx-auto">
-            <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold mb-2">
               Ignite Vape Store
             </h1>
             <p className="text-lg text-gray-400">
