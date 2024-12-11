@@ -57,12 +57,12 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       {isMobile ? (
-        <header className="w-full py-8 px-4">
+        <header className="w-full py-4 px-4">
           <div className="container mx-auto">
-            <h1 className="text-4xl font-bold mb-2">
+            <h1 className="text-4xl font-bold">
               Ignite Vape Store
             </h1>
-            <p className="text-lg text-gray-400">
+            <p className="text-lg text-gray-400 mt-1">
               A melhor seleção de pods descartáveis Ignite
             </p>
           </div>
@@ -74,6 +74,7 @@ const Index = () => {
         </header>
       )}
 
+      {/* Rest of the components */}
       {/* Premium Section - Top */}
       <section className="container mx-auto mb-20">
         <PremiumSection onButtonClick={() => {
