@@ -48,3 +48,10 @@
 .bg-gradient-gold {
   background: linear-gradient(to right, #FFB800, #FFD700);
 }
+
+/* Add text gradient support */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

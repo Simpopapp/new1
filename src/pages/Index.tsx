@@ -12,6 +12,7 @@ import { Wifi, Coffee, CreditCard } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProductCard } from "@/components/ProductCard";
 import { useInView } from "react-intersection-observer";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 const featuredProducts = [
@@ -49,14 +50,29 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+  
+  const isMobile = useIsMobile();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <header className="container mx-auto py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4">Ignite Vape Store</h1>
-        <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis Ignite</p>
-      </header>
+      {isMobile ? (
+        <header className="w-full bg-black py-8 px-4">
+          <div className="container mx-auto">
+            <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Ignite Vape Store
+            </h1>
+            <p className="text-lg text-gray-400">
+              A melhor seleção de pods descartáveis Ignite
+            </p>
+          </div>
+        </header>
+      ) : (
+        <header className="container mx-auto py-20 text-center">
+          <h1 className="text-5xl font-bold mb-4">Ignite Vape Store</h1>
+          <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis Ignite</p>
+        </header>
+      )}
 
       {/* Premium Section - Top */}
       <section className="container mx-auto mb-20">
