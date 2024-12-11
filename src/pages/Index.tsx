@@ -1,11 +1,12 @@
 import { PremiumSection } from "@/components/PremiumSection";
 import { PremiumSection2 } from "@/components/PremiumSection2";
 import { SingleUnits } from "@/components/sections/SingleUnits";
-import { PackUnits } from "@/components/sections/PackUnits";
+import { AllPacks } from "@/components/sections/AllPacks";
 import { V15Line } from "@/components/sections/V15Line";
 import { V35Line } from "@/components/sections/V35Line";
 import { V50Line } from "@/components/sections/V50Line";
 import { V60Line } from "@/components/sections/V60Line";
+import { V80Line } from "@/components/sections/V80Line";
 import { Wifi, Coffee, CreditCard } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProductCard } from "@/components/ProductCard";
@@ -79,22 +80,14 @@ const Index = () => {
         }} />
       </section>
 
-      {/* Anchored Product Sections */}
+      {/* Product Sections */}
       <ScrollArea className="container mx-auto">
-        <section id="v150-section" className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Linha V150</h2>
-          <SingleUnits />
-        </section>
-
-        <section id="v80-section" className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Linha V80</h2>
-          <PackUnits />
-        </section>
-
         <V15Line />
         <V35Line />
         <V50Line />
         <V60Line />
+        <V80Line />
+        <AllPacks />
       </ScrollArea>
 
       {/* Amenities */}
