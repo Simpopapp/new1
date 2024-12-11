@@ -1,29 +1,24 @@
 import { BrandLayout } from "@/components/BrandLayout";
-import { ProductSection } from "@/components/ProductSection";
-import { ProductCard } from "@/components/ProductCard";
+import { SingleUnits } from "@/components/sections/SingleUnits";
+import { AllPacks } from "@/components/sections/AllPacks";
 
-const lostMaryProducts = [
-  {
-    id: "lm5000",
-    name: "Lost Mary BM5000",
-    description: "Pod descartável com 5000 puffs",
-    price: 89.90,
-    image: "https://mipod.com/cdn/shop/files/lostmary-mo20000_sampler-image_600x600.png?v=1716393277",
-    time: "5000 puffs"
-  }
-];
-
-export default function LostMary() {
+const LostMary = () => {
   return (
-    <BrandLayout
+    <BrandLayout 
       brandName="Lost Mary"
       brandDescription="Pods descartáveis Lost Mary - Qualidade e sabor incomparáveis"
     >
-      <ProductSection title="Linha BM5000">
-        {lostMaryProducts.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
-      </ProductSection>
+      <div className="space-y-12">
+        <img 
+          src="https://mipod.com/cdn/shop/files/lostmary-mo20000_sampler-image_600x600.png?v=1716393277"
+          alt="Lost Mary Pods"
+          className="w-full max-w-2xl mx-auto rounded-lg shadow-xl"
+        />
+        <SingleUnits />
+        <AllPacks />
+      </div>
     </BrandLayout>
   );
-}
+};
+
+export default LostMary;
