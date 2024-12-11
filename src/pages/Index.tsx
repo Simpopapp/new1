@@ -1,4 +1,5 @@
 import { PremiumSection } from "@/components/PremiumSection";
+import { PremiumSection2 } from "@/components/PremiumSection2";
 import { SingleUnits } from "@/components/sections/SingleUnits";
 import { PackUnits } from "@/components/sections/PackUnits";
 import { V35Line } from "@/components/sections/V35Line";
@@ -45,7 +46,7 @@ const Index = () => {
         <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis Ignite</p>
       </header>
 
-      {/* Premium Section - Moved to top */}
+      {/* Premium Section - Top */}
       <section className="container mx-auto mb-20">
         <PremiumSection onButtonClick={() => {
           document.getElementById('v150-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -66,6 +67,13 @@ const Index = () => {
             />
           ))}
         </div>
+      </section>
+
+      {/* Second Premium Section */}
+      <section className="container mx-auto mb-20">
+        <PremiumSection2 onButtonClick={() => {
+          document.getElementById('v80-section')?.scrollIntoView({ behavior: 'smooth' });
+        }} />
       </section>
 
       {/* Anchored Product Sections */}
