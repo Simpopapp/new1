@@ -8,7 +8,7 @@ const elfBarProducts = [
     name: "Elf Bar BC5000",
     description: "Pod descartável com 5000 puffs",
     price: 89.90,
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/elf-bar-bc5000_256x256.png?v=1701697284",
+    image: "https://elfbarbrasil.com/elfbar/bc10000-black-gold/",
     time: "5000 puffs"
   },
   {
@@ -16,7 +16,7 @@ const elfBarProducts = [
     name: "Elf Bar BC5000 Ultra",
     description: "Pod descartável premium com 5000 puffs",
     price: 99.90,
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/elf-bar-bc5000-ultra_256x256.png?v=1701697284",
+    image: "https://elfbarbrasil.com/elfbar/bc10000-black-gold/",
     time: "5000 puffs"
   }
 ];

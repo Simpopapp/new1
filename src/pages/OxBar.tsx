@@ -8,7 +8,7 @@ const oxBarProducts = [
     name: "Ox Bar 5000",
     description: "Pod descartável com 5000 puffs",
     price: 89.90,
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/ox-bar-5000_256x256.png?v=1701697284",
+    image: "https://www.oxbar.com/cdn/shop/files/20240715-172125.png?v=1721035393",
     time: "5000 puffs"
   }
 ];

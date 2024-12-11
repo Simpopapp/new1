@@ -8,7 +8,7 @@ const lostMaryProducts = [
     name: "Lost Mary BM5000",
     description: "Pod descartável com 5000 puffs",
     price: 89.90,
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/lost-mary-bm5000_256x256.png?v=1701697284",
+    image: "https://mipod.com/cdn/shop/files/lostmary-mo20000_sampler-image_600x600.png?v=1716393277",
     time: "5000 puffs"
   }
 ];
