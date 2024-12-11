@@ -13,19 +13,19 @@ const brandMenuItems: BrandMenuItem[] = [
   {
     id: "elfbar",
     name: "Elf Bar",
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/elf-bar-logo_256x256.png?v=1701697284",
+    image: "https://elfbarbrasil.com/elfbar/bc10000-black-gold/",
     route: "/elfbar"
   },
   {
     id: "lostmary",
     name: "Lost Mary",
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/lost-mary-logo_256x256.png?v=1701697284",
+    image: "https://mipod.com/cdn/shop/files/lostmary-mo20000_sampler-image_600x600.png?v=1716393277",
     route: "/lostmary"
   },
   {
     id: "oxbar",
     name: "Ox Bar",
-    image: "https://cdn.shopify.com/s/files/1/0262/5804/7069/files/ox-bar-logo_256x256.png?v=1701697284",
+    image: "https://www.oxbar.com/cdn/shop/files/20240715-172125.png?v=1721035393",
     route: "/oxbar"
   }
 ];
