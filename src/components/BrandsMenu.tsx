@@ -35,7 +35,7 @@ export function BrandsMenu() {
 
   return (
     <div className="w-full bg-secondary/50 backdrop-blur-sm sticky top-0 z-50 py-4">
-      <ScrollArea className="w-full" orientation="horizontal">
+      <ScrollArea className="w-full">
         <div className="flex items-center gap-4 px-4 min-w-max mx-auto max-w-screen-xl">
           {brandMenuItems.map((brand) => (
             <button
