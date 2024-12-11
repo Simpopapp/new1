@@ -48,28 +48,28 @@ export function BrandsMenu() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => navigate(brand.route)}
               className={cn(
-                "group flex flex-col items-center gap-8 p-8 rounded-2xl",
+                "group flex flex-col items-center gap-8 rounded-lg overflow-hidden",
                 "hover:bg-secondary/60 transition-all duration-300 ease-out",
                 "focus:outline-none focus:ring-2 focus:ring-primary/50",
-                "relative overflow-hidden"
+                "relative w-[400px]"
               )}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <motion.div 
-                className="w-72 h-72 rounded-full overflow-hidden bg-gradient-to-br from-background/20 to-background/5 p-6 relative"
-                whileHover={{ scale: 1.05 }}
+                className="w-full aspect-[3/4] relative bg-gradient-to-br from-background/20 to-background/5"
+                whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
                   src={brand.image}
                   alt={brand.name}
-                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
               
-              <span className="text-3xl font-medium bg-gradient-gold bg-clip-text text-transparent group-hover:text-foreground transition-colors duration-300">
+              <span className="text-3xl font-medium bg-gradient-gold bg-clip-text text-transparent group-hover:text-foreground transition-colors duration-300 p-4">
                 {brand.name}
               </span>
             </motion.button>
