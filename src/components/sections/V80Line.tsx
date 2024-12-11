@@ -1,4 +1,5 @@
 import { ProductCard } from "@/components/ProductCard";
+import { ChevronDown } from "lucide-react";
 
 const v80Products = [
   {
@@ -21,7 +22,10 @@ const v80Products = [
 
 export const V80Line = () => (
   <section id="v80-section" className="mb-20">
-    <h2 className="text-3xl font-bold mb-8">Linha V80</h2>
+    <div className="flex items-center gap-2 mb-8">
+      <h2 className="text-3xl font-bold">V80</h2>
+      <ChevronDown className="text-gold h-6 w-6" />
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {v80Products.map((product) => (
         <ProductCard key={product.id} {...product} />

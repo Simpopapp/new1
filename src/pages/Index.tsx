@@ -7,6 +7,7 @@ import { V35Line } from "@/components/sections/V35Line";
 import { V50Line } from "@/components/sections/V50Line";
 import { V60Line } from "@/components/sections/V60Line";
 import { V80Line } from "@/components/sections/V80Line";
+import { V150Line } from "@/components/sections/V150Line";
 import { Wifi, Coffee, CreditCard } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProductCard } from "@/components/ProductCard";
@@ -87,6 +88,7 @@ const Index = () => {
         <V50Line />
         <V60Line />
         <V80Line />
+        <V150Line />
         <AllPacks />
       </ScrollArea>
 
