@@ -34,27 +34,27 @@ export function BrandsMenu() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full bg-secondary/50 backdrop-blur-sm sticky top-0 z-50 py-4">
+    <div className="w-full bg-secondary/50 backdrop-blur-sm sticky top-0 z-50 py-8">
       <ScrollArea className="w-full">
-        <div className="flex items-center gap-4 px-4 min-w-max mx-auto max-w-screen-xl">
+        <div className="flex items-center gap-8 px-8 min-w-max mx-auto max-w-screen-xl">
           {brandMenuItems.map((brand) => (
             <button
               key={brand.id}
               onClick={() => navigate(brand.route)}
               className={cn(
-                "flex flex-col items-center gap-2 p-2 rounded-lg",
+                "flex flex-col items-center gap-4 p-4 rounded-lg",
                 "hover:bg-secondary/80 transition-colors duration-200",
                 "focus:outline-none focus:ring-2 focus:ring-primary/50"
               )}
             >
-              <div className="w-16 h-16 rounded-full overflow-hidden bg-background/10 p-2">
+              <div className="w-48 h-48 rounded-full overflow-hidden bg-background/10 p-4">
                 <img
                   src={brand.image}
                   alt={brand.name}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-sm font-medium text-foreground/80">{brand.name}</span>
+              <span className="text-lg font-medium text-foreground/80">{brand.name}</span>
             </button>
           ))}
         </div>
