@@ -2,13 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Crown } from "lucide-react";
 
 export function PremiumSection() {
-  const scrollToV150 = () => {
-    const v150Section = document.querySelector('[data-v150-section]');
-    if (v150Section) {
-      v150Section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="relative overflow-hidden bg-secondary rounded-lg p-8 mb-16">
       <div className="flex flex-col md:flex-row items-center gap-8">
@@ -75,11 +68,8 @@ export function PremiumSection() {
               <span>Design premium</span>
             </div>
           </div>
-          <Button 
-            className="mt-8 bg-gradient-gold text-black hover:bg-gold hover:scale-105 transition-all duration-300"
-            onClick={scrollToV150}
-          >
-            Ver Linha V150
+          <Button className="mt-8 bg-gradient-gold text-black hover:bg-gold hover:scale-105 transition-all duration-300">
+            Comprar V150
           </Button>
         </div>
         <div className="flex-1">
