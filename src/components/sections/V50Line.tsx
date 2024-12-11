@@ -1,4 +1,5 @@
 import { ProductCard } from "@/components/ProductCard";
+import { ProductSection } from "@/components/ProductSection";
 
 const v50Products = [
   {
@@ -20,12 +21,9 @@ const v50Products = [
 ];
 
 export const V50Line = () => (
-  <section id="v50-section" className="mb-20">
-    <h2 className="text-3xl font-bold mb-8">Linha V50</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {v50Products.map((product) => (
-        <ProductCard key={product.id} {...product} />
-      ))}
-    </div>
-  </section>
+  <ProductSection title="Linha V50" className="mb-20">
+    {v50Products.map((product) => (
+      <ProductCard key={product.id} {...product} />
+    ))}
+  </ProductSection>
 );
