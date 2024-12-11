@@ -11,6 +11,8 @@ import { V150Line } from "@/components/sections/V150Line";
 import { Wifi, Coffee, CreditCard } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProductCard } from "@/components/ProductCard";
+import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
 
 const featuredProducts = [
   {
@@ -43,6 +45,11 @@ const featuredProducts = [
 ];
 
 const Index = () => {
+  const { ref: featuredRef, inView: featuredInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -59,7 +66,14 @@ const Index = () => {
       </section>
 
       {/* Featured Products Section */}
-      <section className="container mx-auto mb-20">
+      <section 
+        ref={featuredRef}
+        className={cn(
+          "container mx-auto mb-20 opacity-0 transition-all duration-1000",
+          featuredInView && "opacity-100 translate-y-0",
+          !featuredInView && "translate-y-10"
+        )}
+      >
         <h2 className="text-3xl font-bold mb-8">Produtos em Destaque</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProducts.map((product) => (
