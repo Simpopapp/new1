@@ -14,21 +14,64 @@ const Index = () => {
         <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis Ignite</p>
       </header>
 
-      {/* Premium Section */}
+      {/* Featured Products Section */}
       <section className="container mx-auto mb-20">
-        <PremiumSection onButtonClick={() => {
-          document.getElementById('single-units')?.scrollIntoView({ behavior: 'smooth' });
-        }} />
+        <h2 className="text-3xl font-bold mb-8">Produtos em Destaque</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <PremiumSection onButtonClick={() => {
+            document.getElementById('v150-section')?.scrollIntoView({ behavior: 'smooth' });
+          }} />
+          {/* Adicione mais produtos em destaque aqui se necessário */}
+        </div>
       </section>
 
-      {/* Products Sections */}
-      <ScrollArea className="container mx-auto mb-20">
-        <SingleUnits />
-        <PackUnits />
-        <EconomyLine />
+      {/* Combos Section */}
+      <section className="container mx-auto mb-20">
+        <h2 className="text-3xl font-bold mb-8">Combos Especiais</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Combos temporários */}
+          <div className="bg-secondary p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Combo Iniciante</h3>
+            <p className="text-gray-400">2x V60 + 1x V80</p>
+            <p className="text-2xl font-bold text-gold mt-4">R$ 199,90</p>
+          </div>
+          <div className="bg-secondary p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Combo Premium</h3>
+            <p className="text-gray-400">1x V150 + 2x V80</p>
+            <p className="text-2xl font-bold text-gold mt-4">R$ 259,90</p>
+          </div>
+          <div className="bg-secondary p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Combo Econômico</h3>
+            <p className="text-gray-400">3x V35 + 1x V60</p>
+            <p className="text-2xl font-bold text-gold mt-4">R$ 179,90</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Anchored Product Sections */}
+      <ScrollArea className="container mx-auto">
+        <section id="v150-section" className="mb-20">
+          <h2 className="text-3xl font-bold mb-8">Linha V150</h2>
+          <SingleUnits />
+        </section>
+
+        <section id="v80-section" className="mb-20">
+          <h2 className="text-3xl font-bold mb-8">Linha V80</h2>
+          <PackUnits />
+        </section>
+
+        <section id="v60-section" className="mb-20">
+          <h2 className="text-3xl font-bold mb-8">Linha V60</h2>
+          <SingleUnits />
+        </section>
+
+        <section id="economy-section" className="mb-20">
+          <h2 className="text-3xl font-bold mb-8">Linha Econômica</h2>
+          <EconomyLine />
+        </section>
       </ScrollArea>
 
-      {/* Amenities */}
+      {/* Amenities Section */}
       <section className="container mx-auto mb-20">
         <h2 className="text-3xl font-bold mb-12 text-center">Diferenciais</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
