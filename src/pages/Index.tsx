@@ -14,6 +14,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { useInView } from "react-intersection-observer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
+import { BrandsMenu } from "@/components/BrandsMenu";
 
 const featuredProducts = [
   {
@@ -74,7 +75,6 @@ const Index = () => {
         </header>
       )}
 
-      {/* Rest of the components */}
       {/* Premium Section - Top */}
       <section className="container mx-auto mb-20">
         <PremiumSection onButtonClick={() => {
@@ -104,6 +104,9 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* Brands Menu */}
+      <BrandsMenu />
 
       {/* Second Premium Section */}
       <section className="container mx-auto mb-20">
