@@ -2,7 +2,10 @@ import { PremiumSection } from "@/components/PremiumSection";
 import { PremiumSection2 } from "@/components/PremiumSection2";
 import { SingleUnits } from "@/components/sections/SingleUnits";
 import { PackUnits } from "@/components/sections/PackUnits";
+import { V15Line } from "@/components/sections/V15Line";
 import { V35Line } from "@/components/sections/V35Line";
+import { V50Line } from "@/components/sections/V50Line";
+import { V60Line } from "@/components/sections/V60Line";
 import { Wifi, Coffee, CreditCard } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProductCard } from "@/components/ProductCard";
@@ -27,13 +30,13 @@ const featuredProducts = [
     sectionId: "v80-section"
   },
   {
-    id: "v35",
-    name: "Ignite V35 Vape Device",
-    description: "Dispositivo V35 ideal para iniciantes",
-    price: 49.90,
-    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0201.jpg?v=1691183623",
-    time: "350 puffs",
-    sectionId: "v35-section"
+    id: "v50",
+    name: "Ignite V50 Vape Device",
+    description: "Dispositivo V50 ideal para uso moderado",
+    price: 59.90,
+    image: "https://cdn.shopify.com/s/files/1/0072/5119/8050/files/2023_0226_Ignite_Nic_Studio_MikeKirschbaum_02.21.2023Igniteproductcreative0179_1.jpg?v=1691183359",
+    time: "500 puffs",
+    sectionId: "v50-section"
   }
 ];
 
@@ -88,10 +91,10 @@ const Index = () => {
           <PackUnits />
         </section>
 
-        <section id="v35-section" className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Linha V35</h2>
-          <V35Line />
-        </section>
+        <V15Line />
+        <V35Line />
+        <V50Line />
+        <V60Line />
       </ScrollArea>
 
       {/* Amenities */}
