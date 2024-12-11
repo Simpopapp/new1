@@ -45,6 +45,13 @@ const Index = () => {
         <p className="text-xl text-gray-400 mb-8">A melhor seleção de pods descartáveis Ignite</p>
       </header>
 
+      {/* Premium Section - Moved to top */}
+      <section className="container mx-auto mb-20">
+        <PremiumSection onButtonClick={() => {
+          document.getElementById('v150-section')?.scrollIntoView({ behavior: 'smooth' });
+        }} />
+      </section>
+
       {/* Featured Products Section */}
       <section className="container mx-auto mb-20">
         <h2 className="text-3xl font-bold mb-8">Produtos em Destaque</h2>
@@ -59,13 +66,6 @@ const Index = () => {
             />
           ))}
         </div>
-      </section>
-
-      {/* Premium Section */}
-      <section className="container mx-auto mb-20">
-        <PremiumSection onButtonClick={() => {
-          document.getElementById('v150-section')?.scrollIntoView({ behavior: 'smooth' });
-        }} />
       </section>
 
       {/* Anchored Product Sections */}
