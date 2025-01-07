@@ -58,13 +58,26 @@ export function BrandsMenu() {
           opacity: isCollapsed ? 0.8 : 1,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="relative w-full bg-gradient-to-b from-secondary/80 to-secondary/40 backdrop-blur-md sticky top-0 z-40 py-12 shadow-lg overflow-hidden"
+        className={cn(
+          "relative w-full backdrop-blur-md sticky top-0 z-40 py-12 shadow-lg overflow-hidden",
+          isCollapsed 
+            ? "bg-gradient-to-r from-secondary/90 via-secondary/95 to-secondary/90 border-b border-gold/20" 
+            : "bg-gradient-to-b from-secondary/80 to-secondary/40"
+        )}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5 opacity-50" />
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5",
+          isCollapsed ? "opacity-80" : "opacity-50"
+        )} />
         
         <motion.button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute top-4 right-4 z-50 bg-secondary/80 hover:bg-secondary text-foreground p-2 rounded-lg shadow-lg backdrop-blur-sm border border-gold/20 transition-all duration-300"
+          className={cn(
+            "absolute top-4 right-4 z-50 p-2 rounded-lg shadow-lg backdrop-blur-sm border transition-all duration-300",
+            isCollapsed 
+              ? "bg-gold/10 hover:bg-gold/20 border-gold/30" 
+              : "bg-secondary/80 hover:bg-secondary border-gold/20"
+          )}
           animate={{
             rotate: isCollapsed ? 180 : 0,
           }}
@@ -77,7 +90,7 @@ export function BrandsMenu() {
             <ChevronUp className="w-6 h-6 text-gold" />
           )}
         </motion.button>
-        
+
         <motion.div 
           className="container mx-auto px-4"
           animate={{
