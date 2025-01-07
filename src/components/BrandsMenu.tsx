@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Carousel,
   CarouselContent,
@@ -39,12 +40,31 @@ const brandMenuItems: BrandMenuItem[] = [
 
 export function BrandsMenu() {
   const navigate = useNavigate();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: false,
+  });
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-secondary/80 to-secondary/40 backdrop-blur-md sticky top-0 z-50 py-12 shadow-lg">
+    <motion.div
+      ref={ref}
+      animate={{
+        height: inView ? "auto" : "50%",
+        minHeight: inView ? "300px" : "150px",
+      }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="relative w-full bg-gradient-to-b from-secondary/80 to-secondary/40 backdrop-blur-md sticky top-0 z-50 py-12 shadow-lg overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5 opacity-50" />
       
-      <div className="container mx-auto px-4">
+      <motion.div 
+        className="container mx-auto px-4"
+        animate={{
+          scale: inView ? 1 : 0.8,
+          opacity: inView ? 1 : 0.8,
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
         <Carousel
           opts={{
             align: "start",
@@ -92,7 +112,7 @@ export function BrandsMenu() {
           <CarouselPrevious className="hidden md:flex -left-12 bg-secondary/80 hover:bg-secondary border-gold/20" />
           <CarouselNext className="hidden md:flex -right-12 bg-secondary/80 hover:bg-secondary border-gold/20" />
         </Carousel>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
