@@ -43,23 +43,33 @@ const brandMenuItems: BrandMenuItem[] = [
 export function BrandsMenu() {
   const navigate = useNavigate();
   const [ref, inView] = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
     triggerOnce: false,
   });
   const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const [hasPassedThreshold, setHasPassedThreshold] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!inView && !hasPassedThreshold) {
+      setHasPassedThreshold(true);
+      setIsCollapsed(true);
+    }
+  }, [inView, hasPassedThreshold]);
 
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <motion.div
-        ref={ref}
         animate={{
           height: isCollapsed ? "64px" : (inView ? "auto" : "50%"),
           minHeight: isCollapsed ? "64px" : (inView ? "300px" : "150px"),
           opacity: isCollapsed ? 0.8 : 1,
+          position: hasPassedThreshold ? "fixed" : "relative",
+          top: hasPassedThreshold ? "0" : "auto",
+          width: "100%",
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className={cn(
-          "relative w-full backdrop-blur-md sticky top-0 z-40 py-12 shadow-lg overflow-hidden",
+          "backdrop-blur-md z-40 py-12 shadow-lg overflow-hidden",
           isCollapsed 
             ? "bg-gradient-to-r from-secondary/90 via-secondary/95 to-secondary/90 border-b border-gold/20" 
             : "bg-gradient-to-b from-secondary/80 to-secondary/40"
@@ -150,6 +160,7 @@ export function BrandsMenu() {
           )}
         </motion.div>
       </motion.div>
+      {hasPassedThreshold && <div style={{ height: "300px" }} />}
     </div>
   );
 }
